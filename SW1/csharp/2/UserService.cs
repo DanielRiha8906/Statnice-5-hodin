@@ -2,10 +2,21 @@ namespace CourseManagementSystem;
 
 public sealed class UserService
 {
+    private readonly SQLiteSchoolRepository _repository;
     private readonly UserFactory _userFactory = new();
     private int _nextUserId;
 
     public Dictionary<string, User> Users { get; } = new(StringComparer.OrdinalIgnoreCase);
+
+    public UserService(SQLiteSchoolRepository repository)
+    {
+        _repository = repository;
+        Users = _repository.LoadUsers();
+        _nextUserId = Users.Values
+            .Select(user => int.TryParse(user.UserId, out var userId) ? userId : 0)
+            .DefaultIfEmpty(0)
+            .Max();
+    }
 
     public User RegisterUser(string username, string password, string email, string role)
     {
@@ -18,6 +29,7 @@ public sealed class UserService
         var userId = _nextUserId.ToString();
         var user = _userFactory.CreateUser(username, password, email, userId, role);
         Users[username] = user;
+        _repository.AddUser(user);
         return user;
     }
 
@@ -48,6 +60,7 @@ public sealed class UserService
             throw new InvalidOperationException("User does not exist");
         }
 
+        _repository.DeleteUser(username);
         return true;
     }
 

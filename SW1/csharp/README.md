@@ -1,23 +1,10 @@
-# SW1 C# Ports
+# SW1 C# Apps
 
-Tady jsou dve konzolove C# verze Python aplikaci z `SW1/python`.
+This folder contains two separate console apps, each with its own README:
 
-## Projekty
+- [`1/README.md`](./1/README.md)
+- [`2/README.md`](./2/README.md)
 
-- `SW1/csharp/1` - port aplikace pro spravu kontaktu
-- `SW1/csharp/2` - port course management systemu
+Both apps target `net9.0` and use `Microsoft.Data.Sqlite`, so the first restore will download the NuGet package automatically.
 
-## Spusteni
-
-Pouzij z korene repozitare:
-
-```bash
-DOTNET_CLI_HOME=/tmp dotnet run --project SW1/csharp/1
-DOTNET_CLI_HOME=/tmp dotnet run --project SW1/csharp/2
-```
-
-Prvni aplikace si vytvori SQLite databazi v `data/contacts.db` podle aktualniho pracovniho adresare.
-
-## Poznamka
-
-Projekt `SW1/csharp/1` pouziva lokalne dostupnou knihovnu `Mono.Data.Sqlite`, aby slo SQLite spustit i bez stahovani dalsich NuGet balicku.
+Shared restore config lives in [`NuGet.Config`](./NuGet.Config).

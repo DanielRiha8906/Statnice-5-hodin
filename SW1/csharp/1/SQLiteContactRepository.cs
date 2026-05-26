@@ -1,4 +1,4 @@
-using Mono.Data.Sqlite;
+using Microsoft.Data.Sqlite;
 
 namespace ContactManager;
 

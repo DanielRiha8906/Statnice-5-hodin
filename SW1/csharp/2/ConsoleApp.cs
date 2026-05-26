@@ -2,9 +2,17 @@ namespace CourseManagementSystem;
 
 public sealed class ConsoleApp
 {
-    private readonly UserService _userService = new();
-    private readonly CourseService _courseService = new();
+    private readonly UserService _userService;
+    private readonly CourseService _courseService;
     private User? _currentUser;
+
+    public ConsoleApp()
+    {
+        var dbPath = Path.Combine(Directory.GetCurrentDirectory(), "data", "courses.db");
+        var repository = new SQLiteSchoolRepository(dbPath);
+        _userService = new UserService(repository);
+        _courseService = new CourseService(repository, _userService);
+    }
 
     public void Run()
     {
@@ -268,7 +276,7 @@ public sealed class ConsoleApp
                         Console.WriteLine("2. Weighted Mean");
                         Console.WriteLine("3. Median");
 
-                        course.SetGradingStrategy(Read("Enter your choice: ") switch
+                        _courseService.SetGradingStrategy(courseId, Read("Enter your choice: ") switch
                         {
                             "1" => new ArithmeticMeanGradingStrategy(),
                             "2" => new WeightedMeanGradingStrategy(),
