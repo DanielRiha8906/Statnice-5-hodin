@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "2oui2nfOqSX262+TwSD9thE6yRP62lgl78LsJc3dbhfzDwow4SXqYiUQ/APe8qwPj93YDRRE3T2mlowE+t5TtQ==",
+  "success": false,
+  "projectFilePath": "/home/aerceas/Documents/STATNICE/Příprava/SW1/csharp/2/CourseManagementSystem.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.App.Ref (= 6.0.36)' for 'net6.0'.",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

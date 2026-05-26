@@ -1,0 +1,3 @@
+using ContactManager;
+
+ConsoleApp.Run();

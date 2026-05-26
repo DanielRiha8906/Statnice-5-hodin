@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/aerceas/Documents/STATNICE/Příprava/SW1/csharp/1/ContactManager.csproj": {}
+  },
+  "projects": {
+    "/home/aerceas/Documents/STATNICE/Příprava/SW1/csharp/1/ContactManager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/aerceas/Documents/STATNICE/Příprava/SW1/csharp/1/ContactManager.csproj",
+        "projectName": "ContactManager",
+        "projectPath": "/home/aerceas/Documents/STATNICE/Příprava/SW1/csharp/1/ContactManager.csproj",
+        "packagesPath": "/tmp/.nuget/packages/",
+        "outputPath": "/home/aerceas/Documents/STATNICE/Příprava/SW1/csharp/1/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/aerceas/Documents/STATNICE/Příprava/SW1/csharp/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.136/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
